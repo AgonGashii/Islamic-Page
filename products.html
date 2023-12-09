@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Store</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        h1 {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #555;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 50px;
+            background-color: #f2f2f2;
+        }
+
+        .about-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px;
+            background-color: #fff;
+        }
+
+        .about-text {
+            width: 50%;
+        }
+
+        .product-section {
+            padding: 50px;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 10px;
+            text-align: left;
+            max-width: 300px;
+            max-height: 500px;
+            display: inline-block;
+        }
+
+        .product-image {
+            max-width: 100%;
+            object-fit: contain;
+            height: 250px;
+            text-align: center;
+
+        }
+
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+                #cart {
+                    position: fixed;
+                    top: 10px;
+                    right: 10px;
+                    background-color: #555;
+                    color: white;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+        #sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: #555;
+            overflow-x: hidden;
+            padding-top: 60px;
+            transition: 0.5s;
+            z-index: 1;
+        }
+
+        #sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        #sidebar a:hover {
+            color: #ddd;
+        }
+
+        #sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Islamic Store</h1>
+    </header>
+
+    <nav>
+        <nav>
+            <a href="homepage.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </nav>
+        
+        <span id="cart" onclick="openCart()">Cart: <span id="cartCount">0</span></span>
+    </nav>
+
+    <div class="hero-section">
+        <h2>Welcome to our Islamic Store</h2>
+        <p>Discover a wide range of Islamic products for your spiritual journey.</p>
+    </div>
+
+    <div class="product-section" id="products">
+        <h2>Our Products</h2>
+
+        <div class="product-card" onclick="showSidebar('Product 1', 19.99)">
+            <img class="product-image" src="PrayerMat.jpg" alt="Product 1">
+            <h3>Prayer Mat</h3>
+            <p>Description of Product 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>$19.99</p>
+            <button onclick="addToCart('Product 1', 19.99)">Add to Cart</button>
+        </div>
+        <div class="product-card" onclick="showSidebar('Product 1', 19.99)">
+            <img class="product-image" src="Quran.jpg" alt="Product 1">
+            <h3>Quran</h3>
+            <p>Description of Product 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>$19.99</p>
+            <button onclick="addToCart('Product 1', 19.99)">Add to Cart</button>
+        </div>
+        <div class="product-card" onclick="showSidebar('Product 1', 19.99)">
+            <img class="product-image" src="PrayerBeads.jpg" alt="Product 1">
+            <h3>PrayerBeads</h3>
+            <p>Description of Product 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>$19.99</p>
+            <button onclick="addToCart('Product 1', 19.99)">Add to Cart</button>
+        </div>
+        <div class="product-card" onclick="showSidebar('Product 1', 19.99)">
+            <img class="product-image" src="PrayerMat.jpg" alt="Product 1">
+            <h3>Prayer Mat</h3>
+            <p>Description of Product 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>$19.99</p>
+            <button onclick="addToCart('Product 1', 19.99)">Add to Cart</button>
+        </div>
+
+        <div class="product-card" onclick="showSidebar('Product 1', 19.99)">
+            <img class="product-image" src="Quran.jpg" alt="Product 1">
+            <h3>Quran</h3>
+            <p>Description of Product 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>$19.99</p>
+            <button onclick="addToCart('Product 1', 19.99)">Add to Cart</button>
+        </div>
+        <div class="product-card" onclick="showSidebar('Product 1', 19.99)">
+            <img class="product-image" src="PrayerBeads.jpg" alt="Product 1">
+            <h3>PrayerBeads</h3>
+            <p>Description of Product 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>$19.99</p>
+            <button onclick="addToCart('Product 1', 19.99)">Add to Cart</button>
+        </div>
+
+
+
+
+    </div>
+
+    
+    <div id="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
+        <h2 id="sidebarProductName"></h2>
+        <p id="sidebarProductDescription"></p>
+        <p id="sidebarProductPrice"></p>
+    
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Islamic Store. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSidebar(productName, price) {
+            updateCartCount(localStorage.getItem('cart').length);
+            
+             event.stopPropagation();
+
+document.getElementById('sidebarProductName').innerText = productName;
+document.getElementById('sidebarProductDescription').innerText = 'Description of ' + productName + '. Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+document.getElementById('sidebarProductPrice').innerText = 'Price: $' + price;
+document.getElementById('sidebar').style.width = '250px';
+        }
+
+        function closeSidebar() {
+            document.getElementById('sidebar').style.width = '0';
+        }
+
+        function addToCart(productName, price) {
+                    
+                    var cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                    cart.push({ productName: productName, price: price });
+        
+                    updateCartCount(cart.length );
+        
+                    
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                }
+    
+                function updateCartCount(count) {
+                    document.getElementById('cartCount').innerText = count;
+                }
+                
+                function openCart() {
+                    alert('Cart opened!'); 
+                }
+        
+    </script>
+</body>
+
+</html>
